@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>Университет влюбленных</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#121014;--lilac:#ddb2d5;--card:#ddb2d5;--red:#ee3124;--soft:#f6e9f3;--pill:#fff;--onlilac:#121014;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121014;--fg:#fff;--soft:#241d26}}
+:root[data-theme="dark"]{--bg:#121014;--fg:#fff;--soft:#241d26}
+html{scroll-behavior:smooth;scroll-padding-top:calc(88px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3,.u{font-family:Unbounded,"Arial Black",Arial,sans-serif;font-weight:900;margin:0;line-height:1.05}
+a{color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;align-items:center;gap:20px;padding:14px clamp(16px,4vw,56px);border-bottom:2px solid var(--fg)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:Unbounded,Arial,sans-serif;font-weight:800;font-size:15px}
+.brand svg{width:44px;height:44px}
+nav{margin-left:auto;display:flex;gap:26px;font-weight:600;font-size:15px}
+nav a{text-decoration:none}nav a:hover{color:var(--red)}
+.btn{display:inline-block;font-family:Unbounded,Arial,sans-serif;font-weight:800;font-size:15px;background:var(--lilac);color:var(--onlilac);border:3px solid var(--fg);border-radius:40px;padding:14px 26px;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-3px) scale(1.03);background:#fff}
+.hero{position:relative;overflow:hidden;padding:clamp(40px,7vw,100px) clamp(16px,4vw,56px) 80px;min-height:560px}
+.hero h1{font-size:clamp(44px,8.5vw,120px);color:var(--lilac);max-width:11em;position:relative;z-index:2}
+.hero p{font-weight:700;font-size:clamp(16px,1.7vw,22px);max-width:26em;margin:28px 0 32px;position:relative;z-index:2}
+.herofig{position:absolute;right:-90px;top:20px;width:min(56vw,680px);aspect-ratio:1;z-index:1}.herofig .ringw{inset:0;width:100%;height:100%}.heart{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74%}
+.ringw{position:absolute;pointer-events:none;color:var(--fg)}.ringw circle{vector-effect:non-scaling-stroke;fill:none;stroke:currentColor;stroke-width:8;stroke-dasharray:18 20}
+.lgimg{display:block;aspect-ratio:820/700;background:url(logo.png) center/contain no-repeat}
+.brand .lgimg{width:52px}
+.hist{background:#fff6ea;min-height:240px}.compass{background:#121014;min-height:240px}.cards{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:28px;padding:80px clamp(16px,4vw,56px);max-width:1200px;margin:0 auto}
+.card{background:var(--card);color:var(--onlilac);border-radius:36px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.cardsw{position:relative;overflow:hidden}.opt{padding:12px 16px;border:2px solid var(--fg);border-radius:16px;margin:8px 0}
+.card .pic{border-radius:18px;min-height:190px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.card p{font-family:Unbounded,Arial,sans-serif;font-weight:800;font-size:15px;line-height:1.35;margin:0}
+.card h3{color:var(--red);font-size:30px}
+.tall{grid-column:1 / -1;flex-direction:row;align-items:stretch;gap:32px}.tall .pic{flex:1;min-height:300px}.tall .tt{flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px}.tall .tt p{font-size:18px}
+.check{background:conic-gradient(var(--red) 25%,#c97fba 0 50%,var(--red) 0 75%,#c97fba 0) 0 0/60px 60px}
+.eyebg{background:#ddb2d5}
+.events{background:var(--lilac);color:var(--onlilac);padding:60px clamp(16px,4vw,56px)}
+.events h2,.sec h2{font-size:clamp(28px,4vw,44px);margin-bottom:26px}
+.row{display:grid;grid-template-columns:150px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-top:2px solid var(--onlilac)}
+.tag{font-family:Unbounded,Arial,sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;color:var(--onlilac)}.tag::before{content:"✦ ";color:var(--red)}
+.row h3{font-size:clamp(17px,2vw,22px)}.row small{display:block;margin-top:8px;font-size:13px}
+.pill{background:#fff;color:var(--onlilac);border:0;border-radius:30px;padding:14px 26px;font-family:Inter,Arial,sans-serif;font-weight:600;font-size:15px;cursor:pointer;min-width:190px}
+.pill.ok{background:var(--red);color:#fff}
+.sec{padding:80px clamp(16px,4vw,56px);position:relative;overflow:hidden}
+.team{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;padding-top:20px}
+.pt{width:210px;position:relative}
+.pt .ph{height:270px;border-radius:26px;background:linear-gradient(160deg,#c9a0e0,#7a5fc0);display:flex;align-items:center;justify-content:center;font-family:Unbounded,Arial,sans-serif;font-weight:900;font-size:64px;color:#fff;border:3px solid var(--fg);transition:transform .2s}
+.pt:nth-child(odd) .ph{transform:rotate(-5deg)}.pt:nth-child(even) .ph{transform:rotate(5deg)}
+.pt:hover .ph{transform:rotate(0) scale(1.05)}
+.stk{position:absolute;width:80px;height:80px;right:-22px;bottom:70px}
+.pt span{display:block;margin-top:16px;font-family:Unbounded,Arial,sans-serif;font-weight:800;font-size:14px;line-height:1.3}
+.exam{pointer-events:none;user-select:none;background:var(--soft);border-radius:40px;max-width:820px;margin:0 auto;padding:36px}
+.q{margin:22px 0}.q b{display:block;margin-bottom:10px}
+.q label{display:block;padding:12px 16px;border:2px solid var(--fg);border-radius:16px;margin:8px 0;cursor:pointer}
+.q input{accent-color:#ee3124;margin-right:10px}
+.res{display:block;margin-top:24px;padding:24px;border-radius:24px;background:var(--red);color:#fff}
+.res h3{font-size:24px;margin-bottom:10px}
+.stat{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;margin:0 0 50px}
+.stat div{text-align:center}.stat .u{font-size:clamp(36px,6vw,72px);color:var(--red)}
+footer{background:#121014;color:#fff;padding:70px clamp(16px,4vw,56px) 40px}
+footer h2{font-size:clamp(34px,6vw,84px);color:var(--lilac)}
+.fg{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:40px}
+footer input{width:100%;padding:14px 18px;border-radius:30px;border:2px solid #fff;background:transparent;color:#fff;font:inherit;margin-bottom:12px}
+footer .btn{border-color:#fff}
+.copy{margin-top:50px;opacity:.6;font-size:13px}
+@media(max-width:760px){nav{display:none}.header-cta{margin-left:auto}.cards,.fg{grid-template-columns:1fr}.tall{grid-column:auto;flex-direction:column}.row{grid-template-columns:1fr}.herofig{opacity:.35;width:90vw;right:-35vw;top:160px}.pill{width:100%}}
+.btn,.pill,#send{pointer-events:none;cursor:default}.btn.header-cta{pointer-events:auto;cursor:pointer}</style></head><body>
+<header><a class="brand" href="#top"><i class="lgimg"></i><span>Университет<br>влюбленных</span></a>
+<nav><a href="#events">События</a><a href="#team">Команда</a><a href="#exam">Экзамен</a></nav><a class="btn header-cta" href="#apply">Поступить</a></header>
+<main id="top">
+<section class="hero"><svg class="ringw" viewBox="0 0 100 100" style="width:380px;height:380px;left:-150px;bottom:-190px"><circle cx="50" cy="50" r="49"/></svg>
+<h1>Любовь — это наука</h1><p>Не свадебное агентство и не просто психологический кабинет</p><a class="btn" href="#events">Смотреть события</a>
+<div class="herofig"><svg class="ringw" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/></svg><i class="lgimg heart"></i></div></section>
+<section class="cardsw"><svg class="ringw" viewBox="0 0 100 100" style="width:620px;height:620px;left:-200px;top:120px"><circle cx="50" cy="50" r="49"/></svg><svg class="ringw" viewBox="0 0 100 100" style="width:520px;height:520px;right:-180px;bottom:-60px;color:var(--red)"><circle cx="50" cy="50" r="49"/></svg>
+<div class="cards">
+<div class="card"><div class="pic compass"><svg viewBox="0 0 240 240" width="62%" aria-label="Компас с сердцем"><circle cx="120" cy="130" r="92" fill="#121014" stroke="#dc9ac8" stroke-width="4"/><circle cx="120" cy="130" r="76" fill="none" stroke="#fff" stroke-width="1.5"/><g transform="rotate(45 120 130)"><path d="M120 62L146 104L188 130L146 156L120 198L94 156L52 130L94 104Z" fill="#ee3124"/></g><path d="M120 48L131 119L202 130L131 141L120 212L109 141L38 130L109 119Z" fill="#dc9ac8"/><circle cx="120" cy="130" r="5" fill="#fff"/><circle cx="120" cy="40" r="24" fill="#121014"/><path d="M120 58s-17-11-17-23a9 9 0 0 1 17-5 9 9 0 0 1 17 5c0 12-17 23-17 23z" fill="#ee3124"/></svg></div><h3>Позиционирование</h3><p>Не свадебное агентство и не просто психологический кабинет. Мы учим понимать любовь: свою и чужую.</p><p>Мы стоим между наукой и чувствами. Здесь не дают готовых рецептов, а помогают сориентироваться: что вы чувствуете, чего хотите и куда движетесь. Компас для тех, кто влюблён.</p></div>
+<div class="card"><div class="pic hist"><svg viewBox="0 0 320 200" width="84%" aria-label="Открытая книга с сердцем"><path d="M160 70Q100 50 40 65L40 170Q100 155 160 175Z" fill="#fff" stroke="#121014" stroke-width="5" stroke-linejoin="round"/><path d="M160 70Q220 50 280 65L280 170Q220 155 160 175Z" fill="#fff" stroke="#121014" stroke-width="5" stroke-linejoin="round"/><path d="M62 95Q100 88 140 98M62 118Q100 111 140 121M62 141Q100 134 140 144M180 98Q220 88 258 95M180 121Q220 111 258 118M180 144Q220 134 258 141" fill="none" stroke="#dc9ac8" stroke-width="5" stroke-linecap="round"/><path d="M160 62s-24-15-24-31a13 13 0 0 1 24-8 13 13 0 0 1 24 8c0 16-24 31-24 31z" fill="#ee3124" stroke="#121014" stroke-width="4"/><path d="M50 20L54 32L66 36L54 40L50 52L46 40L34 36L46 32Z" fill="#121014"/><path d="M270 14L273 24L283 27L273 30L270 40L267 30L257 27L267 24Z" fill="#dc9ac8"/></svg></div><h3>История</h3><p>Университет появился, когда выяснилось, что чувства можно изучать как предмет: с лекциями, опытами и защитой диплома.</p></div>
+<div class="card tall"><div class="pic eyebg"><svg viewBox="0 0 300 200" width="86%" aria-label="Глаз с сердцем"><path d="M10 100Q150 -20 290 100Q150 220 10 100Z" fill="#fff" stroke="#121014" stroke-width="6"/><circle cx="150" cy="100" r="52" fill="#121014"/><path d="M150 128s-26-17-26-34a14 14 0 0 1 26-8 14 14 0 0 1 26 8c0 17-26 34-26 34z" fill="#ee3124"/><circle cx="176" cy="78" r="8" fill="#fff"/></svg></div><div class="tt"><h3>Философия</h3><p>Любовь — это наука, а наука начинается с любопытства. Ошибаться можно, ранить нельзя: на любую трещину у нас найдётся пластырь.</p></div></div>
+</div></section>
+<section class="events" id="events" style="position:relative;overflow:hidden"><svg class="ringw" viewBox="0 0 100 100" style="width:440px;height:440px;right:-160px;top:60px;color:var(--red)"><circle cx="50" cy="50" r="49"/></svg><h2>События</h2>
+<div class="row"><span class="tag">Защита</span><div><h3>Защита дипломов</h3><small>Пары публично защищают отношения перед комиссией.</small></div><button class="pill">Записаться · 15 ноября</button></div>
+<div class="row"><span class="tag">Практикум</span><div><h3>Анатомия расставания</h3><small>Как выжить: разбираем случаи на препаратах.</small></div><button class="pill">Записаться · 22 ноября</button></div>
+<div class="row"><span class="tag">Лекция</span><div><h3>Синдром ревности</h3><small>Клинический случай.</small></div><button class="pill">Записаться · 29 ноября</button></div>
+<div class="row"><span class="tag">Конференция</span><div><h3>Как правильно целоваться?</h3><small>Открытая лекция для всех кафедр.</small></div><button class="pill">Записаться · 6 декабря</button></div></section>
+<section class="sec" id="team"><svg class="ringw" viewBox="0 0 100 100" style="width:560px;height:560px;left:-220px;top:-60px"><circle cx="50" cy="50" r="49"/></svg><h2>Команда</h2><div class="team"><div class="pt"><div class="ph"><svg viewBox="0 0 80 80" width="96" aria-label="Звезда"><path d="M40 4L48 32L76 40L48 48L40 76L32 48L4 40L32 32Z" fill="#fff"/></svg></div><i class="lgimg stk"></i><span>Декан факультета чувств</span></div><div class="pt"><div class="ph"><svg viewBox="0 0 80 80" width="96" aria-label="Звезда"><path d="M40 4L48 32L76 40L48 48L40 76L32 48L4 40L32 32Z" fill="#fff"/></svg></div><svg class="stk" viewBox="0 0 80 80" aria-label="Ключ"><circle cx="40" cy="40" r="37" fill="#dc9ac8" stroke="#121014" stroke-width="3"/><circle cx="29" cy="29" r="9" fill="none" stroke="#ee3124" stroke-width="5"/><path d="M35 35L58 58M50 50L57 43M56 56L63 49" stroke="#121014" stroke-width="5" stroke-linecap="round" fill="none"/></svg><span>Кафедра ревности</span></div><div class="pt"><div class="ph"><svg viewBox="0 0 80 80" width="96" aria-label="Звезда"><path d="M40 4L48 32L76 40L48 48L40 76L32 48L4 40L32 32Z" fill="#fff"/></svg></div><svg class="stk" viewBox="0 0 80 80" aria-label="Глаз"><circle cx="40" cy="40" r="37" fill="#ee3124" stroke="#121014" stroke-width="3"/><path d="M10 40Q40 14 70 40Q40 66 10 40Z" fill="#fff" stroke="#121014" stroke-width="3"/><circle cx="40" cy="40" r="11" fill="#121014"/><circle cx="44" cy="36" r="3" fill="#fff"/></svg><span>Практикумы по расставанию</span></div><div class="pt"><div class="ph"><svg viewBox="0 0 80 80" width="96" aria-label="Звезда"><path d="M40 4L48 32L76 40L48 48L40 76L32 48L4 40L32 32Z" fill="#fff"/></svg></div><svg class="stk" viewBox="0 0 80 80" aria-label="Знак плюс"><circle cx="40" cy="40" r="37" fill="#121014" stroke="#fff" stroke-width="3"/><rect x="32" y="14" width="16" height="52" rx="4" fill="#ee3124"/><rect x="14" y="32" width="52" height="16" rx="4" fill="#ee3124"/></svg><span>Лаборатория поцелуев</span></div></div></section>
+<section class="sec" id="exam"><svg class="ringw" viewBox="0 0 100 100" style="width:520px;height:520px;right:-200px;top:20px"><circle cx="50" cy="50" r="49"/></svg><div class="stat"><div><div class="u">1 462</div>студента уже учатся</div><div><div class="u">52</div>кафедры чувств</div><div><div class="u">100%</div>сердец вылечено</div></div>
+<div class="exam"><h2 style="margin-bottom:6px">Экзамен на совместимость</h2><p>Три вопроса — и мы поставим диагноз.</p>
+<div class="q"><b>1. Первое свидание: куда идём?</b><div class="opt">В лабораторию</div><div class="opt">В кино</div><div class="opt">Куда глаза глядят</div></div>
+<div class="q"><b>2. Ответа нет уже три часа. Что делаем?</b><div class="opt">Строю гипотезу</div><div class="opt">Пишу ещё раз</div><div class="opt">Иду печь пирог</div></div>
+<div class="q"><b>3. Любовь — это…</b><div class="opt">Наука</div><div class="opt">Эксперимент</div><div class="opt">Случайность</div></div>
+<div class="res"><h3>Диагноз: неизлечимый исследователь</h3>Рецепт: гипотеза, свидание и пластырь по необходимости.</div></div></section>
+</main>
+<footer id="apply" style="position:relative;overflow:hidden"><svg class="ringw" viewBox="0 0 100 100" style="width:460px;height:460px;right:-150px;top:-120px;color:#fff"><circle cx="50" cy="50" r="49"/></svg><h2>Любовь — это наука</h2><div class="fg"><div><h3 style="margin-bottom:16px">Приёмная комиссия</h3><input id="nm" placeholder="Ваше имя"><input id="ct" placeholder="Телефон или почта"><button class="btn" id="send" type="button">Подать заявку</button><p id="ok" style="display:none;margin-top:14px">Заявка принята. Пластырь уже ждёт вас ♥</p></div>
+<div><h3 style="margin-bottom:16px">Контакты</h3><p>Москва, Мукомольный проезд, д. 2</p><p>+7 (925) 486-55-45</p></div></div>
+<div class="copy">Университет влюбленных · БРИЦП262 · 2026</div></footer>
+<script>
+document.getElementById('send').onclick=function(){if(document.getElementById('nm').value.trim()&&document.getElementById('ct').value.trim())document.getElementById('ok').style.display='block'};
+document.querySelectorAll('.pill').forEach(function(b){b.onclick=function(){b.classList.add('ok');b.textContent='Вы записаны ♥'}});
+</script></body></html>
